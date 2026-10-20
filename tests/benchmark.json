@@ -1,0 +1,11 @@
+{
+  "trials": 80,
+  "parityCases": 80,
+  "trialSeconds": 20,
+  "jsMs": 447.69247699999994,
+  "wasmMs": 92.0421510000001,
+  "speedup": 4.863994073758657,
+  "trialsPerSecond": 869.1669971945778,
+  "wasmBytes": 15208,
+  "memoryBytes": 1048576
+}

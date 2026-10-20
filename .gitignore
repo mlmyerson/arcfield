@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.zig-cache/
+zig-out/
+.env
+.env.*
+!.env.example
+.DS_Store
