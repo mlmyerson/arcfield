@@ -1,0 +1,29 @@
+.notebookFooterNav{position:fixed;right:0;bottom:0;left:0;z-index:60;justify-content:center;padding:4px 12px calc(4px + env(safe-area-inset-bottom));background:#272928;border-top:1px solid #ffffff22;box-shadow:0 -8px 24px #17261d22}
+.notebookFooterNav .stageTab{flex:1;max-width:180px}
+main{padding-bottom:84px}
+.notebookStage{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:0;align-items:stretch;min-height:min(880px,calc(100vh - 76px));padding:0}
+.notebookStage>.stageIntro{display:flex;flex-direction:column;justify-content:center;max-width:none;min-height:100%;margin:0;padding:clamp(38px,6vw,92px)}
+.stageIntro h2{max-width:520px;margin:12px 0 18px;font-size:clamp(38px,4vw,58px);line-height:1.04}
+.stageIntro p{max-width:440px;font-size:16px;line-height:1.75}
+.stage-explore{background:#fff}
+.stage-explore>.stageIntro{grid-column:1;grid-row:1;background:#f34955;color:#fff}
+.stage-explore .stageKicker,.stage-explore .stageIntro h2,.stage-explore .stageIntro p{color:#fff}
+.stage-explore .stageKicker{opacity:.82}
+.stage-explore>.playLayout{grid-column:2;grid-row:1;align-self:center;grid-template-columns:minmax(190px,.68fr) minmax(0,1.32fr);gap:24px;width:auto;padding:clamp(24px,3.8vw,60px)}
+.stage-explore .playTools h3{font-size:25px}
+.stage-evolve{grid-template-columns:minmax(0,1.22fr) minmax(300px,.78fr);background:#f4f3ed}
+.stage-evolve>.stageIntro{grid-column:2;grid-row:1;background:#272928;color:#f8f6ef}
+.stage-evolve .stageKicker{color:#f37474}
+.stage-evolve .stageIntro h2,.stage-evolve .stageIntro p{color:#f8f6ef}
+.stage-evolve>.evolveMeta{grid-column:1;grid-row:1;align-self:center;max-width:none;padding:clamp(28px,4vw,66px);background:#f4f3ed}
+.stage-evolve #evolutionLog{margin:25px 0 0}
+.stage-evolve #landscapePanel{margin-top:32px}
+.stage-examine{background:#fff}
+.stage-examine>.stageIntro{grid-column:1;grid-row:1;background:#dcebe0;color:#1c3425}
+.stage-examine .stageKicker{color:#527a5d}
+.stage-examine .stageIntro h2,.stage-examine .stageIntro p{color:#1c3425}
+.stage-examine>.examineBody{grid-column:2;grid-row:1;align-self:center;max-width:none;padding:clamp(28px,4vw,66px)}
+.stage-examine .resultPlaceholder{min-height:150px;display:flex;align-items:center;color:#66776a;font:25px Georgia,serif}
+.stage-examine #results{max-width:100%}
+@media(max-width:900px){.notebookStage{grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr)}.notebookStage>.stageIntro{padding:38px}.stage-explore>.playLayout{grid-template-columns:1fr;padding:26px;gap:12px}.stage-explore .playTools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.stage-explore .playTools h3,.stage-explore .tilePalette,.stage-explore .playActions,.stage-explore .sandboxStatus,.stage-explore .sandboxStats{grid-column:1/-1}.stage-explore .tilePalette{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:10px}.stage-explore .playTools h3{margin-bottom:10px}.stage-explore .fieldSelectLabel,.stage-explore .rangeLabel{margin:8px 0}.stage-explore .playActions{margin:10px 0 0}.stage-explore .sandboxStats{margin:10px 0}.stage-evolve>.evolveMeta,.stage-examine>.examineBody{padding:28px}.stage-evolve #landscapeCanvas{height:340px}}
+@media(max-width:700px){.notebookStage{display:grid;grid-template-columns:minmax(0,1fr);min-height:0;padding:0}.notebookStage>.stageIntro,.stage-explore>.playLayout,.stage-evolve>.evolveMeta,.stage-examine>.examineBody{grid-column:1;grid-row:auto}.notebookStage>.stageIntro{min-height:280px;padding:48px 24px}.stageIntro h2{font-size:38px}.stageIntro p{font-size:15px}.stage-explore>.playLayout{padding:28px 20px 38px;grid-template-columns:1fr}.stage-explore .playTools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.stage-explore .playTools h3,.stage-explore .tilePalette,.stage-explore .playActions,.stage-explore .sandboxStatus,.stage-explore .sandboxStats{grid-column:1/-1}.stage-explore .tilePalette{grid-template-columns:repeat(3,minmax(0,1fr))}.stage-explore .fieldSelectLabel,.stage-explore .rangeLabel{margin:8px 0}.stage-explore .playActions{margin:14px 0 0}.stage-evolve>.evolveMeta,.stage-examine>.examineBody{padding:28px 20px 40px}.stage-evolve #landscapeCanvas{height:320px}.stage-examine #results .stats{flex-wrap:wrap;gap:14px}.stage-examine #results .stats>div{min-width:120px}.stage-examine .resultPlaceholder{min-height:100px;font-size:20px}}
