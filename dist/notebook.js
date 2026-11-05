@@ -1,5 +1,6 @@
 (()=>{
 const notebookStyles=document.createElement('link');notebookStyles.rel='stylesheet';notebookStyles.href='notebook.css';document.head.append(notebookStyles);
+const rhythmStyles=document.createElement('link');rhythmStyles.rel='stylesheet';rhythmStyles.href='alternating.css';document.head.append(rhythmStyles);
 const $=id=>document.getElementById(id),make=(tag,cls,text)=>{const item=document.createElement(tag);if(cls)item.className=cls;if(text)item.textContent=text;return item};
 const header=document.querySelector('header'),main=document.querySelector('main'),aside=main.querySelector('aside'),waiting=$('waiting'),controls=$('controls'),log=$('evolutionLog'),results=$('results'),start=$('start'),cancel=$('cancel');
 const stages=[
@@ -7,12 +8,12 @@ const stages=[
   {id:'evolveStage',name:'Evolve',title:'Search for a quieter field'},
   {id:'examineStage',name:'Examine',title:'Inspect the best result'}
 ];
-function go(index){document.getElementById(stages[index].id).scrollIntoView({behavior:'smooth',block:'start'})}
+function go(index){document.getElementById(stages[index].id).scrollIntoView({behavior:'instant',block:'start'})}
 function navigation(current,position){const nav=make('nav','stageNavigation '+position);nav.setAttribute('aria-label','Notebook stages');stages.forEach((stage,index)=>{const link=make('button','stageTab',String(index+1).padStart(2,'0')+' '+stage.name);link.type='button';link.dataset.stage=String(index);link.setAttribute('aria-current',index===current?'step':'false');link.onclick=()=>go(index);nav.append(link)});return nav}
 function section(index,kicker,description){const root=make('section','notebookStage stage-'+stages[index].name.toLowerCase());root.id=stages[index].id;root.setAttribute('aria-labelledby',root.id+'Title');root.append(navigation(index,'top'));const intro=make('div','stageIntro');const eyebrow=make('span','stageKicker',kicker);const title=make('h2','',stages[index].title);title.id=root.id+'Title';const copy=make('p','',description);intro.append(eyebrow,title,copy);root.append(intro);return root}
-const explore=section(0,'01 · THE PLAYGROUND','Choose a tile, paint the field, then send particles through it. Collisions can change the route the next particle sees.');
-const evolve=section(1,'02 · THE SEARCH','Watch a population of fields compete under the same traffic. The graph shows measured candidates; your playground field is separate from a fresh search.');
-const examine=section(2,'03 · THE RESULT','When evolution finishes, reveal the best field and replay the same seeded particle trial.');
+const explore=section(0,'01 · THE PLAYGROUND','Paint Arc A, Arc B, or Cross tiles and send particles through your field. Collisions can rewire a tile, changing the route the next particle sees.');
+const evolve=section(1,'02 · THE SEARCH','Every candidate gets the same seeded traffic. Follow the live fitness landscape as layouts compete. Your edited playground stays independent from a fresh search.');
+const examine=section(2,'03 · THE RESULT','Reveal the best field when you are ready. Inspect its collision score, then replay the same seeded traffic to see how the layout behaves.');
 const headerNav=navigation(0,'header');headerNav.classList.add('notebookHeaderNav');header.append(headerNav);
 
 const playLayout=make('div','playLayout'),playTools=make('div','playTools'),playBoard=make('div','playBoard');
